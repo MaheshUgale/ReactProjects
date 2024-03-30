@@ -1,0 +1,35 @@
+{
+  "name": "reactprojects",
+  "version": "1.0.0",
+  "description": "This is react!",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaheshUgale/ReactProjects.git"
+  },
+  "keywords": [
+    "A"
+  ],
+  "author": "Maheshwar Ugale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaheshUgale/ReactProjects/issues"
+  },
+  "homepage": "https://github.com/MaheshUgale/ReactProjects#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
