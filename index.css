@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.logo {
+    width: 115px;
+}
+
+.nav-items ul {
+    display: flex;
+    gap: 25px;
+    font-size: 20px;
+
+}
+
+.nav-items ul li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.res-card {
+    width: 200px;
+    height: auto;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.res-card:hover {
+    transform: scale(0.95);
+}
+
+.search {
+    padding: 10px;
+}
+
+.cardImg {
+    width: 100%
+}
+
+h4 {
+    margin: 2px 0px;
+}
+
+.res-container {
+    flex-wrap: wrap;
+    gap: 21px;
+    display: flex;
+    justify-content: center;
+}
