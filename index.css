@@ -57,3 +57,9 @@ h4 {
     display: flex;
     justify-content: center;
 }
+
+.filter-btn {
+    padding: 4px;
+    cursor: pointer;
+    margin: 10px;
+}

@@ -1,7 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const resobj = [
+export const resobj = [
     {
         info: {
             id: "248961",
@@ -789,78 +786,3 @@ const resobj = [
         },
     },
 ];
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-cantainer">
-                <img
-                    className="logo"
-                    src="https://as2.ftcdn.net/v2/jpg/06/62/27/35/1000_F_662273587_FUApAaMvV1hBiKXTXbWaxbhCmKI1p6QX.jpg"
-                />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    );
-};
-const styleCard = {
-    backgroundColor: "#f0f0f0",
-};
-
-const RestorantCard = (props) => {
-    const { resdata } = props;
-    const { name, cuisines, avgRating, costForTwo, deliveryTime, cloudinaryImageId } = resdata?.info
-    return (
-        <div className="res-card" style={styleCard}>
-            <div>
-                <img
-                    className="cardImg"
-                    src={
-                        "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-                        cloudinaryImageId
-                    }
-                />
-            </div>
-            <h3>{name}</h3>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating} stars</h4>
-            <h4>{costForTwo}</h4>
-            <h4>{deliveryTime} min</h4>
-        </div>
-    );
-};
-
-// sending key as a index is not recommneded for looping over a component. becouse the index of perticuler value may change.
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-                {
-                    resobj.map((res) => {
-                        return <RestorantCard resdata={res} key={res.info.id} />
-                    })
-                }
-            </div>
-        </div>
-    );
-};
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header></Header>
-            <Body></Body>
-        </div>
-    );
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
