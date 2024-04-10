@@ -7,7 +7,7 @@ const styleCard = {
 
 const RestorantCard = (props) => {
     const { resdata } = props;
-    const { name, cuisines, avgRating, costForTwo, deliveryTime, cloudinaryImageId } = resdata?.info
+    const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } = resdata?.info
     return (
         <div className="res-card" style={styleCard}>
             <div>
@@ -23,7 +23,7 @@ const RestorantCard = (props) => {
             <h4>{cuisines.join(", ")}</h4>
             <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>
-            <h4>{deliveryTime} min</h4>
+            <h4>{sla.slaString} </h4>
         </div>
     );
 };
