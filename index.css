@@ -6,6 +6,10 @@
     align-items: center;
 }
 
+body {
+    font-family: "Roboto", sans-serif;
+}
+
 .logo {
     width: 115px;
 }

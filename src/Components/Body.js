@@ -1,6 +1,7 @@
 import RestorantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 // sending key as a index is not recommneded for looping over a component. becouse the index of perticuler value may change.
 const Body = () => {
@@ -44,7 +45,7 @@ const Body = () => {
             <div className="res-container">
                 {
                     FilteredlistOfRestaurants.map((res) => {
-                        return <RestorantCard resdata={res} key={res.info.id} />
+                        return <Link to={"/restaurants/" + res.info.id} key={res.info.id}><RestorantCard resdata={res} /></Link>
                     })
                 }
             </div>
