@@ -2,6 +2,7 @@ import RestorantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // sending key as a index is not recommneded for looping over a component. becouse the index of perticuler value may change.
 const Body = () => {
@@ -25,6 +26,11 @@ const Body = () => {
             return res.info.name.toLowerCase().includes(searchText.toLowerCase())
         })
         setFilteredListOfRestaurants(filtedData)
+    }
+
+    const OnlineStatus = useOnlineStatus()
+    if (!OnlineStatus) {
+        return <h1>Looks like you are offline, please check your internate connection!</h1>
     }
 
     return listOfRestaurants.length === 0 ? (<Shimmer />) : (
