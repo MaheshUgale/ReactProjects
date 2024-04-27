@@ -8,7 +8,7 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus();
     return (
-        <div className="header">
+        <div className="header bg-green-300">
             <div className="logo-cantainer">
                 <img
                     className="logo"

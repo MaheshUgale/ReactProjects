@@ -1,3 +1,4 @@
+import { Component } from "react";
 import { CDN_URL } from "../utils/constants";
 
 const styleCard = {
@@ -27,5 +28,16 @@ const RestorantCard = (props) => {
         </div>
     );
 };
+// This is a higher order Component
+export const withVegIcon = (RestorantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className="vegIcon">{"🟢"}</label>
+                <RestorantCard {...props} />
+            </div>
+        )
+    }
+}
 
 export default RestorantCard;

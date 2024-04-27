@@ -1,8 +1,9 @@
-import RestorantCard from "./RestaurantCard";
+import RestorantCard, { withVegIcon } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
 
 // sending key as a index is not recommneded for looping over a component. becouse the index of perticuler value may change.
 const Body = () => {
@@ -10,6 +11,7 @@ const Body = () => {
     const [listOfRestaurants, setlistOfRestaurants] = useState([])
     const [FilteredlistOfRestaurants, setFilteredListOfRestaurants] = useState([])
     const [searchText, setsearchText] = useState("")
+    const RestaurantCardVeg = withVegIcon(RestorantCard);
     useEffect(() => {
         fetchData();
     }, [])
@@ -51,7 +53,12 @@ const Body = () => {
             <div className="res-container">
                 {
                     FilteredlistOfRestaurants.map((res) => {
-                        return <Link to={"/restaurants/" + res.info.id} key={res.info.id}><RestorantCard resdata={res} /></Link>
+
+                        return <Link to={"/restaurants/" + res.info.id} key={res.info.id}>
+                            {res.info.veg ? (<RestaurantCardVeg resdata={res} />) : (<RestorantCard resdata={res} />)}
+
+
+                        </Link>
                     })
                 }
             </div>
