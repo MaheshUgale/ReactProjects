@@ -3,12 +3,16 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [btnName, setbtnName] = useState("Login")
     const data = useContext(UserContext)
     console.log(data);
     const onlineStatus = useOnlineStatus();
+
+    // selecter (subscribing to the store)
+    const cartItem = useSelector((store) => store.cart.items)
     return (
         <div className="header bg-green-300">
             <div className="logo-cantainer">
@@ -24,7 +28,7 @@ const Header = () => {
                     <li><Link to="/about">About us</Link></li>
                     <li><Link to="/contact">Contact us</Link></li>
                     <li><Link to="/grocery">Grocery</Link></li>
-                    <li>Cart</li>
+                    <li><Link to="/cart"> 🛒 ({cartItem.length} items)</Link> </li>
                     <button className="login" onClick={() => {
                         btnName == "Login" ? setbtnName("Logout") : setbtnName("Login")
                     }}>{btnName}</button>
